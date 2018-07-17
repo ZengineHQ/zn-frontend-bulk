@@ -1,0 +1,26 @@
+{
+  "name": "@zenginehq/frontend-bulk",
+  "version": "1.0.0",
+  "description": "Module for working with large Zengine API requests.",
+  "scripts": {
+    "lint": "jshint --config .jshintrc ./src || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZengineHQ/zn-frontend-bulk.git"
+  },
+  "keywords": [
+    "zn-plugin",
+    "zn-frontend",
+    "zn-module"
+  ],
+  "author": "Joe Bello <joe.bello@wizehive.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZengineHQ/zn-frontend-bulk/issues"
+  },
+  "homepage": "https://github.com/ZengineHQ/zn-frontend-bulk#readme",
+  "devDependencies": {
+    "jshint": "^2.9.5"
+  }
+}
