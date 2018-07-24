@@ -45,13 +45,12 @@ plugin.service('wgnBulk', ['$timeout', 'znData', function($timeout, znData) {
     *
     * @param {string} endpoint The Zengine API endpoint to query.
     * @param {Object} params The request details.
-    * @param {Array<number|string>} ids The ids of the resources to be
-    *   modified.
+    * @param {Array<Object>} resources The resources to be deleted.
     * @param {number} delay The desired delay, in milliseconds; optional.
     *
     * @return {Promise} The completed request.
     */
-  this.deleteAll = function deleteAll(endpoint, params, ids, delay) {
+  this.deleteAll = function deleteAll(endpoint, params, resources, delay) {
     var request = znData(endpoint).deleteAll;
 
     request = delay ? _slow(request, delay) : request;
@@ -59,11 +58,11 @@ plugin.service('wgnBulk', ['$timeout', 'znData', function($timeout, znData) {
     function deleteSome() {
       var _params = angular.copy(params);
 
-      _params.id = _serialize(ids.splice(0, 300));
+      _params.id = _serialize(resources.splice(0, 300));
 
       return request(_params)
       .then(function() {
-        return ids.length ? deleteSome() : 'Deletion complete.';
+        return resources.length ? deleteSome() : 'Deletion complete.';
       });
     }
 
