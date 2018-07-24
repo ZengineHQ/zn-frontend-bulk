@@ -59,7 +59,7 @@ plugin.service('wgnBulk', ['$timeout', 'znData', function($timeout, znData) {
     function deleteSome() {
       var _params = angular.copy(params);
 
-      _params.id = _serialize(ids.splice(0, 500));
+      _params.id = _serialize(ids.splice(0, 300));
 
       return request(_params)
       .then(function() {
