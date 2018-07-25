@@ -1,6 +1,6 @@
 {
   "name": "@zenginehq/frontend-bulk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Module for working with large frontend Zengine API requests and avoiding API rate limits.",
   "scripts": {
     "lint": "jshint --config .jshintrc ./src || true",
