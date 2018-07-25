@@ -10,17 +10,23 @@ which provides a convenient means of communication with the Zengine API.
 
 For clarification on the znData service please refer to https://zenginehq.github.io/developers/plugins/api/services/
 
+## Installation
+
+```shell
+npm install @zenginehq/frontend-bulk --save
+```
+
 ## Usage
 
 ```shell
 plugin.controller('Controller', ['$scope', 'wgnBulk', function ($scope, wgnBulk) {    
-  $scope.deleteRecords = function deleteRecords(recordIds) {
+  $scope.deleteRecords = function deleteRecords(records) {
     var delay = 1500,
         params = {};
     
     params.formId = 12345;
     
-    wgnBulk.deleteAll('FormRecords', params, recordIds, delay)
+    wgnBulk.deleteAll('FormRecords', params, records, delay)
       .then(function(response) {
         //do something with the response
       })
