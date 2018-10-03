@@ -90,8 +90,8 @@ plugin.service('wgnBulk', ['$timeout', 'znData', function($timeout, znData) {
 
     function getSome() {
       return request(params, function(results, meta) {
-        if (meta.totalCount !== 0) {
-          collection = collection.concat(results);
+        collection = collection.concat(results);
+        if (meta.totalCount > collection.length) {
           params.page++;
         } else {
           done = true;
