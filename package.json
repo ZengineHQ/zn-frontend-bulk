@@ -4,7 +4,7 @@
   "description": "Module for working with large frontend Zengine API requests and avoiding API rate limits.",
   "scripts": {
     "lint": "jshint --config .jshintrc ./src || true",
-    "release": "jshint --config .jshintrc ./src && standard-version"
+    "release": "jshint --config .jshintrc ./src && standard-version -t ''"
   },
   "repository": {
     "type": "git",
