@@ -18,7 +18,7 @@ npm install @zenginehq/frontend-bulk --save
 
 ## Usage
 
-```shell
+```js
 plugin.controller('Controller', ['$scope', 'wgnBulk', function ($scope, wgnBulk) {    
   $scope.deleteRecords = function deleteRecords(records) {
     var delay = 1500,
@@ -37,7 +37,10 @@ plugin.controller('Controller', ['$scope', 'wgnBulk', function ($scope, wgnBulk)
 
   $scope.getAllRecords = function getAllRecords() {
     var delay = 5000,
-        params = {};
+        params = {
+          // Note that filters should be stringified
+          filter: JSON.stringify({ and: [{ prefix: '', attribute: 'isComplete', value: 1 }] })
+        };
 
     params.formId = 12345;
     
